@@ -1,15 +1,5 @@
 YesDontpanicComUa::Application.routes.draw do
-  get "pages/home"
-
-  get "pages/blog"
-
-  get "pages/agency"
-
-  get "pages/portfolio"
-
-  get "pages/projects"
-
-  get "pages/contacts"
+  get "pages/about"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -21,12 +11,7 @@ YesDontpanicComUa::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
-  match 'home' => 'pages#home'
-  match 'blog' => 'pages#blog'
-  match 'agency' => 'pages#agency'
-  match 'portfolio' => 'pages#portfolio'
-  match 'projects' => 'pages#projects'
-  match 'contacts' => 'pages#contacts'
+  match 'about' => 'pages#about'
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
