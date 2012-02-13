@@ -1,5 +1,5 @@
 # DO NOT DELETE THIS
-#ssh_options[:verbose] = :debug 
+ssh_options[:verbose] = :debug 
 #ssh_options[:config]=true
 #require "bundler/capistrano"
 #set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
