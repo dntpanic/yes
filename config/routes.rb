@@ -1,4 +1,10 @@
 YesDontpanicComUa::Application.routes.draw do
+  resources :blog_posts
+
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   get "pages/about"
 
   # The priority is based upon order of creation:
@@ -51,7 +57,7 @@ YesDontpanicComUa::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'pages#home'
+  root :to => 'blog_posts#index'
 
   # See how all your routes lay out with "rake routes"
 
