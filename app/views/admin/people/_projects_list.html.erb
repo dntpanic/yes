@@ -1,0 +1,5 @@
+<ul>
+  <% projects.each do |p| %>
+    <li> <%= link_to p.title, admin_project_path(p) + '/edit'%></li>
+  <% end%>
+</ul>
