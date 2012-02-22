@@ -2,9 +2,9 @@
 #ssh_options[:verbose] = :debug 
 #ssh_options[:config]=true
 #set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
-#set :default_environment, {
-  #'PATH' => "/home/www-data/.rbenv/shims:/home/www-data/.rbenv/bin:$PATH"
-#}
+set :default_environment, {
+  'PATH' => "/home/www-data/.rbenv/shims:/home/www-data/.rbenv/bin:$PATH"
+}
 
 require "bundler/capistrano"
 set :application, "yes.dontpanic.com.ua"
@@ -17,6 +17,7 @@ set :user, "www-data"
 set :branch, "master"
 set :scm_verbose, true
 set :deploy_via, :remote_cache
+set :use_sudo, false
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
