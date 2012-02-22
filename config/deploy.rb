@@ -1,11 +1,12 @@
 # DO NOT DELETE THIS
-ssh_options[:verbose] = :debug 
+#ssh_options[:verbose] = :debug 
 #ssh_options[:config]=true
-#require "bundler/capistrano"
 #set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
 #set :default_environment, {
   #'PATH' => "/home/www-data/.rbenv/shims:/home/www-data/.rbenv/bin:$PATH"
 #}
+
+require "bundler/capistrano"
 set :application, "yes.dontpanic.com.ua"
 set :repository,  "git@github.com:dntpanic/yes.git"
 
@@ -28,9 +29,8 @@ namespace :deploy do
 end
 
 set :domain, "188.40.64.231"
-set :rails_env, "staging"
+set :rails_env, "master"
 
-set :username, user
 role :app, domain
 role :web, domain
 role :db,  domain, :primary => true
