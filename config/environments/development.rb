@@ -39,4 +39,9 @@ YesDontpanicComUa::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:8080' }
 
   Rails.logger = Logger.new(STDERR)
+
+  silence_warnings do
+    require 'pry'
+    IRB = Pry
+  end
 end
