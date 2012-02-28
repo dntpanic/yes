@@ -5,7 +5,14 @@ YesDontpanicComUa::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  get "pages/index"
   get "pages/about"
+  get "pages/blog"
+  get "pages/blog_inside"
+  get "pages/contact_us"
+  get "pages/inside_project"
+  get "pages/people"
+  get "pages/profile"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -17,7 +24,14 @@ YesDontpanicComUa::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+  match 'index' => 'pages#index'
   match 'about' => 'pages#about'
+  match 'blog' => 'pages#blog'
+  match 'blog_inside' => 'pages#blog_inside'
+  match 'contact_us' => 'pages#contact_us'
+  match 'inside_project' => 'pages#inside_project'
+  match 'people' => 'pages#people'
+  match 'profile' => 'pages#profile'
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
