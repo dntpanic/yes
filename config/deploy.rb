@@ -1,9 +1,9 @@
 # DO NOT DELETE THIS
 #ssh_options[:verbose] = :debug 
 #ssh_options[:config]=true
-#set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
+set :bundle_flags, "--deployment --quiet --binstubs ruby-local-exec"
 set :default_environment, {
-  'PATH' => "/home/www-data/.rbenv/shims:/home/www-data/.rbenv/bin:$PATH"
+  'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 }
 
 require "bundler/capistrano"
@@ -29,7 +29,7 @@ namespace :deploy do
   end
 end
 
-set :domain, "188.40.64.231"
+set :domain, "dontpanic.com.ua"
 set :rails_env, "master"
 
 role :app, domain

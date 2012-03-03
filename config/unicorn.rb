@@ -2,7 +2,7 @@
 #
 # This file should go in the config directory of your Rails app e.g. config/unicorn.rb
 
-app_dir = "/www/yes.dontpanic.com.ua"
+app_dir = "/www/yes.dontpanic.com.ua/current"
 worker_processes 8
 working_directory app_dir
 
