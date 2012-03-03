@@ -17,12 +17,12 @@ timeout 60
 
 #listen 8080 # listen to port 8080 on all TCP interfaces
 #listen "127.0.0.1:8080"  # listen to port 8080 on the loopback interface
-listen "#{app_dir}/tmp/unicorn.socket", :backlog => 2048
+listen "/tmp/yes.dontpanic.com.ua.unicorn.socket", :backlog => 2048
 
 # feel free to point this anywhere accessible on the filesystem
 user 'www-data'
 
-pid "#{app_dir}/tmp/unicorn.pid"
+pid "#/var/run/yes.dontpanic.com.ua.unicorn.pid"
 stderr_path "#{app_dir}/log/unicorn.stderr.log"
 stdout_path "#{app_dir}/log/unicorn.stdout.log"
 
