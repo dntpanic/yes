@@ -1,9 +1,9 @@
 # DO NOT DELETE THIS
 #ssh_options[:verbose] = :debug 
 #ssh_options[:config]=true
-#set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
+set :bundle_flags, "--deployment --quiet --binstubs ruby-local-exec"
 set :default_environment, {
-  'PATH' => "/home/www-data/.rbenv/shims:/home/www-data/.rbenv/bin:$PATH"
+  'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 }
 
 require "bundler/capistrano"
@@ -29,7 +29,7 @@ namespace :deploy do
   end
 end
 
-set :domain, "188.40.64.231"
+set :domain, "dontpanic.com.ua"
 set :rails_env, "master"
 
 role :app, domain
@@ -48,3 +48,11 @@ role :worker, domain
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
+after 'deploy:update_code', 'deploy:symlink_db'
+
+namespace :deploy do
+  desc "Symlinks the database.yml"
+  task :symlink_db, :roles => :app do
+    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+  end
+end

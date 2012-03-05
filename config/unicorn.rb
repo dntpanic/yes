@@ -2,7 +2,7 @@
 #
 # This file should go in the config directory of your Rails app e.g. config/unicorn.rb
 
-app_dir = "/www/yes.dontpanic.com.ua"
+app_dir = "/www/yes.dontpanic.com.ua/current"
 worker_processes 8
 working_directory app_dir
 
@@ -17,12 +17,12 @@ timeout 60
 
 #listen 8080 # listen to port 8080 on all TCP interfaces
 #listen "127.0.0.1:8080"  # listen to port 8080 on the loopback interface
-listen "#{app_dir}/tmp/unicorn.socket", :backlog => 2048
+listen "/tmp/yes.dontpanic.com.ua.unicorn.socket", :backlog => 2048
 
 # feel free to point this anywhere accessible on the filesystem
 user 'www-data'
 
-pid "#{app_dir}/tmp/unicorn.pid"
+pid "/tmp/yes.dontpanic.com.ua.unicorn.pid"
 stderr_path "#{app_dir}/log/unicorn.stderr.log"
 stdout_path "#{app_dir}/log/unicorn.stdout.log"
 
