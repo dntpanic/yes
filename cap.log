@@ -1,0 +1,163 @@
+  * executing `deploy'
+  * executing `deploy:update'
+ ** transaction: start
+  * executing `deploy:update_code'
+    updating the cached checkout on all servers
+    executing locally: "git ls-remote git@github.com:dntpanic/yes.git master"
+    command finished in 3402ms
+  * executing "if [ -d /www/yes.dontpanic.com.ua/shared/cached-copy ]; then cd /www/yes.dontpanic.com.ua/shared/cached-copy && git fetch  origin && git fetch --tags  origin && git reset  --hard 620e493bba856130ddb8c601d81de258c83600e7 && git clean  -d -x -f; else git clone git@github.com:dntpanic/yes.git /www/yes.dontpanic.com.ua/shared/cached-copy && cd /www/yes.dontpanic.com.ua/shared/cached-copy && git checkout -b deploy 620e493bba856130ddb8c601d81de258c83600e7; fi"
+    servers: ["188.40.64.231"]
+D, [2012-03-05T11:46:05.531092 #47774] DEBUG -- net.ssh.transport.session[8056cd10]: establishing connection to 188.40.64.231:22
+D, [2012-03-05T11:46:05.581587 #47774] DEBUG -- net.ssh.transport.session[8056cd10]: connection established
+I, [2012-03-05T11:46:05.581857 #47774]  INFO -- net.ssh.transport.server_version[8056b8c0]: negotiating protocol version
+D, [2012-03-05T11:46:05.636828 #47774] DEBUG -- net.ssh.transport.server_version[8056b8c0]: remote is `SSH-2.0-OpenSSH_5.8p1 Debian-7ubuntu1'
+D, [2012-03-05T11:46:05.636965 #47774] DEBUG -- net.ssh.transport.server_version[8056b8c0]: local is `SSH-2.0-Ruby/Net::SSH_2.3.0 x86_64-darwin10.8.0'
+D, [2012-03-05T11:46:05.687338 #47774] DEBUG -- tcpsocket[8056c680]: read 840 bytes
+D, [2012-03-05T11:46:05.687586 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 0 type 20 len 836
+I, [2012-03-05T11:46:05.687721 #47774]  INFO -- net.ssh.transport.algorithms[80566334]: got KEXINIT from server
+I, [2012-03-05T11:46:05.688053 #47774]  INFO -- net.ssh.transport.algorithms[80566334]: sending KEXINIT
+D, [2012-03-05T11:46:05.688337 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 0 type 20 len 716
+D, [2012-03-05T11:46:05.688498 #47774] DEBUG -- tcpsocket[8056c680]: sent 720 bytes
+I, [2012-03-05T11:46:05.688562 #47774]  INFO -- net.ssh.transport.algorithms[80566334]: negotiating algorithms
+D, [2012-03-05T11:46:05.688939 #47774] DEBUG -- net.ssh.transport.algorithms[80566334]: negotiated:
+* kex: diffie-hellman-group-exchange-sha1
+* host_key: ssh-rsa
+* encryption_server: aes128-cbc
+* encryption_client: aes128-cbc
+* hmac_client: hmac-sha1
+* hmac_server: hmac-sha1
+* compression_client: none
+* compression_server: none
+* language_client: 
+* language_server: 
+D, [2012-03-05T11:46:05.689015 #47774] DEBUG -- net.ssh.transport.algorithms[80566334]: exchanging keys
+D, [2012-03-05T11:46:05.689397 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 1 type 34 len 20
+D, [2012-03-05T11:46:05.689478 #47774] DEBUG -- tcpsocket[8056c680]: sent 24 bytes
+D, [2012-03-05T11:46:05.833257 #47774] DEBUG -- tcpsocket[8056c680]: read 152 bytes
+D, [2012-03-05T11:46:05.833469 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 1 type 31 len 148
+D, [2012-03-05T11:46:05.844285 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 2 type 32 len 140
+D, [2012-03-05T11:46:05.844414 #47774] DEBUG -- tcpsocket[8056c680]: sent 144 bytes
+D, [2012-03-05T11:46:05.900841 #47774] DEBUG -- tcpsocket[8056c680]: read 720 bytes
+D, [2012-03-05T11:46:05.901081 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 2 type 33 len 700
+D, [2012-03-05T11:46:05.917463 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 3 type 21 len 20
+D, [2012-03-05T11:46:05.917651 #47774] DEBUG -- tcpsocket[8056c680]: sent 24 bytes
+D, [2012-03-05T11:46:05.917755 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 3 type 21 len 12
+D, [2012-03-05T11:46:05.918209 #47774] DEBUG -- net.ssh.authentication.session[80752620]: beginning authentication of `www-data'
+D, [2012-03-05T11:46:05.918390 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 4 type 5 len 28
+D, [2012-03-05T11:46:05.918459 #47774] DEBUG -- tcpsocket[8056c680]: sent 52 bytes
+D, [2012-03-05T11:46:06.048797 #47774] DEBUG -- tcpsocket[8056c680]: read 52 bytes
+D, [2012-03-05T11:46:06.049017 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 4 type 6 len 28
+D, [2012-03-05T11:46:06.049212 #47774] DEBUG -- net.ssh.authentication.session[80752620]: trying publickey
+D, [2012-03-05T11:46:06.049771 #47774] DEBUG -- net.ssh.authentication.agent[80750730]: connecting to ssh-agent
+D, [2012-03-05T11:46:06.053053 #47774] DEBUG -- net.ssh.authentication.agent[80750730]: sending agent request 1 len 51
+D, [2012-03-05T11:46:06.053181 #47774] DEBUG -- net.ssh.authentication.agent[80750730]: received agent packet 2 len 5
+D, [2012-03-05T11:46:06.053246 #47774] DEBUG -- net.ssh.authentication.agent[80750730]: sending agent request 11 len 0
+D, [2012-03-05T11:46:06.053347 #47774] DEBUG -- net.ssh.authentication.agent[80750730]: received agent packet 12 len 5
+D, [2012-03-05T11:46:06.053600 #47774] DEBUG -- net.ssh.authentication.methods.publickey[80750938]: trying publickey (8b:dc:9f:24:31:f0:dd:59:27:35:c4:94:66:b4:e6:90)
+D, [2012-03-05T11:46:06.053774 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 5 type 50 len 348
+D, [2012-03-05T11:46:06.053894 #47774] DEBUG -- tcpsocket[8056c680]: sent 372 bytes
+D, [2012-03-05T11:46:06.977819 #47774] DEBUG -- tcpsocket[8056c680]: read 324 bytes
+D, [2012-03-05T11:46:06.978051 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 5 type 60 len 300
+D, [2012-03-05T11:46:06.996458 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 6 type 50 len 620
+D, [2012-03-05T11:46:06.996633 #47774] DEBUG -- tcpsocket[8056c680]: sent 644 bytes
+D, [2012-03-05T11:46:07.054873 #47774] DEBUG -- tcpsocket[8056c680]: read 36 bytes
+D, [2012-03-05T11:46:07.055079 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 6 type 52 len 12
+D, [2012-03-05T11:46:07.055179 #47774] DEBUG -- net.ssh.authentication.methods.publickey[80750938]: publickey succeeded (8b:dc:9f:24:31:f0:dd:59:27:35:c4:94:66:b4:e6:90)
+D, [2012-03-05T11:46:07.055687 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 7 type 90 len 44
+D, [2012-03-05T11:46:07.055957 #47774] DEBUG -- tcpsocket[8056c680]: sent 68 bytes
+D, [2012-03-05T11:46:07.478690 #47774] DEBUG -- tcpsocket[8056c680]: read 52 bytes
+D, [2012-03-05T11:46:07.478958 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 7 type 91 len 28
+I, [2012-03-05T11:46:07.479130 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_open_confirmation: 0 0 0 32768
+I, [2012-03-05T11:46:07.479297 #47774]  INFO -- net.ssh.connection.channel[81545f84]: sending channel request "auth-agent-req@openssh.com"
+D, [2012-03-05T11:46:07.479429 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 8 type 98 len 44
+I, [2012-03-05T11:46:07.479531 #47774]  INFO -- net.ssh.connection.channel[81545f84]: sending channel request "pty-req"
+D, [2012-03-05T11:46:07.479667 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 9 type 98 len 60
+D, [2012-03-05T11:46:07.479842 #47774] DEBUG -- tcpsocket[8056c680]: sent 152 bytes
+D, [2012-03-05T11:46:07.875591 #47774] DEBUG -- tcpsocket[8056c680]: read 72 bytes
+D, [2012-03-05T11:46:07.875827 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 8 type 99 len 12
+I, [2012-03-05T11:46:07.875913 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_success: 0
+D, [2012-03-05T11:46:07.876024 #47774] DEBUG -- net.ssh.service.forward[8154cfb4]: authentication agent forwarding is active
+D, [2012-03-05T11:46:07.876140 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 9 type 99 len 12
+I, [2012-03-05T11:46:07.876206 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_success: 0
+    [188.40.64.231] executing command
+I, [2012-03-05T11:46:07.876476 #47774]  INFO -- net.ssh.connection.channel[81545f84]: sending channel request "exec"
+D, [2012-03-05T11:46:07.876630 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 10 type 98 len 572
+D, [2012-03-05T11:46:07.876805 #47774] DEBUG -- tcpsocket[8056c680]: sent 596 bytes
+D, [2012-03-05T11:46:07.927958 #47774] DEBUG -- tcpsocket[8056c680]: read 52 bytes
+D, [2012-03-05T11:46:07.928197 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 10 type 93 len 28
+I, [2012-03-05T11:46:07.928298 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_window_adjust: 0 +2097152
+D, [2012-03-05T11:46:08.913237 #47774] DEBUG -- tcpsocket[8056c680]: read 68 bytes
+D, [2012-03-05T11:46:08.913515 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 11 type 90 len 44
+I, [2012-03-05T11:46:08.913747 #47774]  INFO -- net.ssh.connection.session[81546178]: channel open auth-agent@openssh.com
+I, [2012-03-05T11:46:08.913847 #47774]  INFO -- net.ssh.service.forward[8154cfb4]: opening auth-agent channel
+D, [2012-03-05T11:46:08.913988 #47774] DEBUG -- net.ssh.authentication.agent[8150a8d0]: connecting to ssh-agent
+D, [2012-03-05T11:46:08.917938 #47774] DEBUG -- net.ssh.authentication.agent[8150a8d0]: sending agent request 1 len 51
+D, [2012-03-05T11:46:08.918096 #47774] DEBUG -- net.ssh.authentication.agent[8150a8d0]: received agent packet 2 len 5
+D, [2012-03-05T11:46:08.918387 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 11 type 91 len 28
+D, [2012-03-05T11:46:08.918661 #47774] DEBUG -- tcpsocket[8056c680]: sent 52 bytes
+D, [2012-03-05T11:46:08.972111 #47774] DEBUG -- tcpsocket[8056c680]: read 52 bytes
+D, [2012-03-05T11:46:08.972405 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 12 type 94 len 28
+I, [2012-03-05T11:46:08.972548 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_data: 1 5b
+D, [2012-03-05T11:46:08.972630 #47774] DEBUG -- net.ssh.service.forward[8154cfb4]: data:5 on agent forwarded channel
+D, [2012-03-05T11:46:08.972838 #47774] DEBUG -- unixsocket[80790e0c]: sent 5 bytes
+D, [2012-03-05T11:46:08.973045 #47774] DEBUG -- unixsocket[80790e0c]: read 9 bytes
+D, [2012-03-05T11:46:08.973184 #47774] DEBUG -- net.ssh.connection.channel[8150ac54]: read 9 bytes from client, sending over agent forwarded connection
+D, [2012-03-05T11:46:08.973368 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 12 type 94 len 28
+D, [2012-03-05T11:46:08.973635 #47774] DEBUG -- tcpsocket[8056c680]: sent 52 bytes
+D, [2012-03-05T11:46:09.262749 #47774] DEBUG -- tcpsocket[8056c680]: read 344 bytes
+D, [2012-03-05T11:46:09.262994 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 13 type 94 len 60
+I, [2012-03-05T11:46:09.263087 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_data: 0 33b
+ ** [188.40.64.231 :: out] Permission denied (publickey).
+D, [2012-03-05T11:46:09.263472 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 14 type 96 len 12
+I, [2012-03-05T11:46:09.263549 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_eof: 1
+D, [2012-03-05T11:46:09.263611 #47774] DEBUG -- net.ssh.service.forward[8154cfb4]: eof agent on agent forwarded channel
+D, [2012-03-05T11:46:09.263802 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 15 type 98 len 44
+I, [2012-03-05T11:46:09.263893 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_request: 0 exit-status false
+D, [2012-03-05T11:46:09.264023 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 16 type 94 len 60
+I, [2012-03-05T11:46:09.264118 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_data: 0 44b
+ ** [188.40.64.231 :: out] fatal: The remote end hung up unexpectedly
+D, [2012-03-05T11:46:09.264276 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 17 type 96 len 12
+I, [2012-03-05T11:46:09.264341 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_eof: 0
+D, [2012-03-05T11:46:09.264449 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 18 type 97 len 12
+I, [2012-03-05T11:46:09.264520 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_close: 0
+D, [2012-03-05T11:46:09.264645 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 13 type 97 len 28
+    command finished in 2209ms
+*** [deploy:update_code] rolling back
+  * executing "rm -rf /www/yes.dontpanic.com.ua/releases/20120305094609; true"
+    servers: ["188.40.64.231"]
+D, [2012-03-05T11:46:09.265679 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 14 type 90 len 44
+D, [2012-03-05T11:46:09.265858 #47774] DEBUG -- unixsocket[80790e0c]: read 0 bytes
+D, [2012-03-05T11:46:09.266007 #47774] DEBUG -- tcpsocket[8056c680]: sent 120 bytes
+I, [2012-03-05T11:46:09.266121 #47774]  INFO -- net.ssh.connection.channel[8150ac54]: agent forwarded connection closed
+D, [2012-03-05T11:46:09.266232 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 15 type 97 len 28
+D, [2012-03-05T11:46:09.266328 #47774] DEBUG -- tcpsocket[8056c680]: sent 52 bytes
+D, [2012-03-05T11:46:09.316676 #47774] DEBUG -- tcpsocket[8056c680]: read 52 bytes
+D, [2012-03-05T11:46:09.317208 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 19 type 91 len 28
+I, [2012-03-05T11:46:09.317435 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_open_confirmation: 2 3 0 32768
+I, [2012-03-05T11:46:09.317743 #47774]  INFO -- net.ssh.connection.channel[81497510]: sending channel request "pty-req"
+D, [2012-03-05T11:46:09.318095 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 16 type 98 len 60
+D, [2012-03-05T11:46:09.318407 #47774] DEBUG -- tcpsocket[8056c680]: sent 84 bytes
+D, [2012-03-05T11:46:09.366594 #47774] DEBUG -- tcpsocket[8056c680]: read 36 bytes
+D, [2012-03-05T11:46:09.366913 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 20 type 97 len 12
+I, [2012-03-05T11:46:09.367012 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_close: 1
+D, [2012-03-05T11:46:09.367096 #47774] DEBUG -- net.ssh.service.forward[8154cfb4]: closing agent forwarded channel
+D, [2012-03-05T11:46:09.415369 #47774] DEBUG -- tcpsocket[8056c680]: read 36 bytes
+D, [2012-03-05T11:46:09.415846 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 21 type 99 len 12
+I, [2012-03-05T11:46:09.416031 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_success: 2
+    [188.40.64.231] executing command
+I, [2012-03-05T11:46:09.416379 #47774]  INFO -- net.ssh.connection.channel[81497510]: sending channel request "exec"
+D, [2012-03-05T11:46:09.416721 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 17 type 98 len 172
+D, [2012-03-05T11:46:09.417091 #47774] DEBUG -- tcpsocket[8056c680]: sent 196 bytes
+D, [2012-03-05T11:46:09.466336 #47774] DEBUG -- tcpsocket[8056c680]: read 52 bytes
+D, [2012-03-05T11:46:09.466705 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 22 type 93 len 28
+I, [2012-03-05T11:46:09.466834 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_window_adjust: 2 +2097152
+D, [2012-03-05T11:46:09.472534 #47774] DEBUG -- tcpsocket[8056c680]: read 140 bytes
+D, [2012-03-05T11:46:09.472764 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 23 type 98 len 44
+I, [2012-03-05T11:46:09.472875 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_request: 2 exit-status false
+D, [2012-03-05T11:46:09.473017 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 24 type 96 len 12
+I, [2012-03-05T11:46:09.473094 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_eof: 2
+D, [2012-03-05T11:46:09.473244 #47774] DEBUG -- tcpsocket[8056c680]: received packet nr 25 type 97 len 12
+I, [2012-03-05T11:46:09.473320 #47774]  INFO -- net.ssh.connection.session[81546178]: channel_close: 2
+D, [2012-03-05T11:46:09.473458 #47774] DEBUG -- tcpsocket[8056c680]: queueing packet nr 18 type 97 len 28
+    command finished in 208ms
+failed: "env PATH=/home/www-data/.rbenv/shims:/home/www-data/.rbenv/bin:$PATH sh -c 'if [ -d /www/yes.dontpanic.com.ua/shared/cached-copy ]; then cd /www/yes.dontpanic.com.ua/shared/cached-copy && git fetch  origin && git fetch --tags  origin && git reset  --hard 620e493bba856130ddb8c601d81de258c83600e7 && git clean  -d -x -f; else git clone git@github.com:dntpanic/yes.git /www/yes.dontpanic.com.ua/shared/cached-copy && cd /www/yes.dontpanic.com.ua/shared/cached-copy && git checkout -b deploy 620e493bba856130ddb8c601d81de258c83600e7; fi'" on 188.40.64.231
