@@ -66,5 +66,14 @@ YesDontpanicComUa::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   Paperclip.options[:command_path] = "/usr/local/bin"
   #NOTE change it when moving to real production
-  config.action_mailer.default_url_options = { :host => 'mail.dontpanic.com.ua', :openssl_verify_mode => 'none' }
+  config.action_mailer.default_url_options = { :host => 'yes.dontpanic.com.ua', :openssl_verify_mode => 'none' }
+  config.action_mailer.smtp_settings = {
+    :address => 'mail.dontpanic.com.ua',
+    :port => 587,
+    :domain => 'mail.dontpanic.com.ua',
+    :authentication => :login,
+    :user_name => 'username@your.domain',
+    :password => 'password',
+    :openssl_verify_mode => 'none' 
+  }
 end
