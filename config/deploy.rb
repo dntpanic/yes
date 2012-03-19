@@ -30,7 +30,7 @@ namespace :deploy do
 end
 
 set :domain, "dontpanic.com.ua"
-set :rails_env, "master"
+set :rails_env, "production"
 
 role :app, domain
 role :web, domain
