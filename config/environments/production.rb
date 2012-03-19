@@ -65,5 +65,6 @@ YesDontpanicComUa::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   Paperclip.options[:command_path] = "/usr/local/bin"
-  config.action_mailer.default_url_options = { :host => 'localhost:8080' }
+  #NOTE change it when moving to real production
+  config.action_mailer.default_url_options = { :host => 'yes.dontpanic.com.ua' }
 end
