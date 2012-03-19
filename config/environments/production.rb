@@ -66,5 +66,5 @@ YesDontpanicComUa::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   Paperclip.options[:command_path] = "/usr/local/bin"
   #NOTE change it when moving to real production
-  config.action_mailer.default_url_options = { :host => 'yes.dontpanic.com.ua' }
+  config.action_mailer.default_url_options = { :host => 'dontpanic.com.ua' }
 end
