@@ -37,6 +37,8 @@ role :web, domain
 role :db,  domain, :primary => true
 role :worker, domain
 
+set :keep_releases, 4
+
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
 
