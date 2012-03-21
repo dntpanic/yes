@@ -10,4 +10,7 @@ class AdminUser < ActiveRecord::Base
   def password_required?
         new_record? ? false : super
   end
+  def confirmation_required?
+    !confirmed?
+  end
 end
