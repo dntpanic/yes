@@ -27,7 +27,4 @@ ActiveAdmin.register Person do
     end
     f.buttons
   end
-
-
-  
 end

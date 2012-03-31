@@ -16,38 +16,12 @@
   </div>
   <div class="content">
     <ul class="photos-list">
-      <li>
-      <img src="/assets/img08.jpg" width="150" height="150" alt="image description" />
-      <span class="mask"></span>
-      </li>
-      <li>
-      <img src="/assets/img09.jpg" width="150" height="150" alt="image description" />
-      <span class="mask"></span>
-      </li>
-      <li>
-      <img src="/assets/img10.jpg" width="150" height="150" alt="image description" />
-      <span class="mask"></span>
-      </li>
-      <li>
-      <img src="/assets/img11.jpg" width="150" height="150" alt="image description" />
-      <span class="mask"></span>
-      </li>
-      <li>
-      <img src="/assets/img12.jpg" width="150" height="150" alt="image description" />
-      <span class="mask"></span>
-      </li>
-      <li>
-      <img src="/assets/img13.jpg" width="150" height="150" alt="image description" />
-      <span class="mask"></span>
-      </li>
-      <li>
-      <img src="/assets/img14.jpg" width="150" height="150" alt="image description" />
-      <span class="mask"></span>
-      </li>
-      <li>
-      <img src="/assets/img15.jpg" width="150" height="150" alt="image description" />
-      <span class="mask"></span>
-      </li>
+      <% @people.each do |person| %>
+        <li>
+          <%= image_tag(person.avatar, :size => "151x151") %>
+          <span class="mask"></span>
+        </li>
+      <% end %>
     </ul>
   </div>
   <div class="bottom-box">

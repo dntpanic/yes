@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   def inside_project
   end
   def people
+    @people = Person.all
   end
   def profile
   end
