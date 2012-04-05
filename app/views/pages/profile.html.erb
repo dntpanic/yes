@@ -1,11 +1,11 @@
 <div class="top-panel">
-  <div class="box-join">
+  <!--div class="box-join">
     <a href="#">Присоединиться к проекту</a>
-  </div>
+  </div-->
   <div class="profile">
     <div class="photo-holder">
       <div class="photo">
-        <img src="/assets/photo02.jpg" width="151" height="150" alt="Андрей Кипченко" />
+        <%= image_tag(@person.avatar, :size => "151x151") %>
         <span class="mask"></span>
       </div>
       <ul class="socials">
@@ -18,16 +18,8 @@
       </ul>
     </div>
     <div class="text">
-      <h1>Андрей Кипченко</h1>
-      <p>С развитием челюстей из одной из жаберных дуг, возникли первые рыбы. Кроме челюстей, рыбы имеюtт парные плавники, внутреннее ухо с тремя полукруглыми каналами и жаберные дуги. Несмотря на появление первых челюстноротых рыб еще в ордовике, они занимали подчиненное положение вплоть до девона. Таким образом, рыбы и бесчелюстные существовали больше 100 миллионов лет в условиях преобладания бесчелюстных, в отличие от настоящего времени.</p>
-      <ul>
-        <li>
-        <a href="#">www.portfolio.com.ua</a>
-        </li>
-        <li>
-        <a href="mailto:&#109;&#121;&#098;&#111;&#120;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#109;&#121;&#098;&#111;&#120;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
-        </li>
-      </ul>
+      <h1><%= @person.name %></h1>
+      <p><%= @person.about %></p>
       <div class="likeit">
         <div class="facebook"><img src="/assets/fb.gif" alt="fb" width="177" height="24" /></div>
         <div class="twitter"><img src="/assets/twitter.gif" alt="twitter" width="98" height="22" /></div>
@@ -37,65 +29,31 @@
 </div>
 <div class="main">
   <div class="content">
-    <p>Я предлагаю:</p>
-    <ul class="works-list">
-      <li>
-      <img src="/assets/img28.gif" width="174" height="173" alt="image description" />
-      <span class="mask"></span>
-      </li>
-      <li>
-      <img src="/assets/img28.gif" width="174" height="173" alt="image description" />
-      <span class="mask"></span>
-      </li>
-      <li>
-      <img src="/assets/img28.gif" width="174" height="173" alt="image description" />
-      <span class="mask"></span>
-      </li>
-      <li>
-      <img src="/assets/img28.gif" width="174" height="173" alt="image description" />
-      <span class="mask"></span>
-      </li>
-    </ul>
+    <% if @works.count > 0 %>
+      <p>Я предлагаю:</p>
+      <ul class="works-list">
+        <% @works.each do |work| %>
+          <li>
+            <a href="/inside_project/<%= work.id %>/">
+              <%= image_tag(work.thumbnail, :size => "174x173") %>
+              <span class="mask"></span>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
   <div class="bottom-box">
     <h2>Другие участники:</h2>
     <ul class="items-list">
+      <% @people.each do |person| %>
       <li>
-      <a href="#">
-        <img src="/assets/img22.jpg" width="101" height="101" alt="image description" />
+      <a href="/profile/<%= person.id.to_s %>">
+        <%= image_tag(person.avatar, :size => "101x101") %>
         <span class="mask"></span>
       </a>
       </li>
-      <li>
-      <a href="#">
-        <img src="/assets/img23.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
-      </li>
-      <li>
-      <a href="#">
-        <img src="/assets/img24.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
-      </li>
-      <li>
-      <a href="#">
-        <img src="/assets/img25.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
-      </li>
-      <li>
-      <a href="#">
-        <img src="/assets/img26.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
-      </li>
-      <li>
-      <a href="#">
-        <img src="/assets/img27.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
-      </li>
+    <% end %>
     </ul>
   </div>
 </div>

@@ -18,8 +18,10 @@
     <ul class="photos-list">
       <% @people.each do |person| %>
         <li>
+        <a href="/profile/<%= person.id.to_s %>">
           <%= image_tag(person.avatar, :size => "151x151") %>
           <span class="mask"></span>
+          </a>
         </li>
       <% end %>
     </ul>
@@ -29,7 +31,7 @@
     <ul class="items-list">
       <% @projects.each do |prj| %>
       <li>
-      <a href="/inside_project/<%= prj.id %>/">
+        <a href="/inside_project/<%= prj.id %>/">
           <%= image_tag(prj.thumbnail, :size => "101x101") %>
           <span class="mask"></span>
         </a>

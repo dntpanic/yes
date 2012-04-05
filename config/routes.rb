@@ -5,7 +5,6 @@ YesDontpanicComUa::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   # resources :products
-  #resources :blog_posts
 
   get "pages/index"
   get "pages/about"
@@ -31,9 +30,9 @@ YesDontpanicComUa::Application.routes.draw do
   match 'blog' => 'pages#blog'
   match 'blog_inside/:id' => 'pages#blog_inside'
   match 'contact_us' => 'pages#contact_us'
-  match 'inside_project' => 'pages#inside_project'
+  match 'inside_project/:id' => 'pages#inside_project'
   match 'people' => 'pages#people'
-  match 'profile' => 'pages#profile'
+  match 'profile/:id' => 'pages#profile'
   
   # Sample resource route with options:
   #   resources :products do

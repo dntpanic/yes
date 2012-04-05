@@ -5,6 +5,11 @@ class Project < ActiveRecord::Base
     :path => ":rails_root/public/assets/projects/:id/:style/:basename.:extension"
 
   validates_attachment_presence :thumbnail
+  
+  def self.works(person_id, project_id)
+    return Project.where('projects.person_id = ? and projects.id != ?', person_id, project_id).limit(5)
+  end
 
   belongs_to :person
 end
+
