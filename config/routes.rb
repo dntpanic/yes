@@ -1,9 +1,11 @@
 YesDontpanicComUa::Application.routes.draw do
-  resources :blog_posts
-
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+
+  # Sample resource route (maps HTTP verbs to controller actions automatically):
+  # resources :products
+  #resources :blog_posts
 
   get "pages/index"
   get "pages/about"
@@ -27,15 +29,12 @@ YesDontpanicComUa::Application.routes.draw do
   match 'index' => 'pages#index'
   match 'about' => 'pages#about'
   match 'blog' => 'pages#blog'
-  match 'blog_inside' => 'pages#blog_inside'
+  match 'blog_inside/:id' => 'pages#blog_inside'
   match 'contact_us' => 'pages#contact_us'
   match 'inside_project' => 'pages#inside_project'
   match 'people' => 'pages#people'
   match 'profile' => 'pages#profile'
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
+  
   # Sample resource route with options:
   #   resources :products do
   #     member do
@@ -71,7 +70,7 @@ YesDontpanicComUa::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'blog_posts#index'
+  root :to => 'pages#index'
 
   # See how all your routes lay out with "rake routes"
 

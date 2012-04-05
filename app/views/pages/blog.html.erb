@@ -9,28 +9,13 @@
   </div>
 </div>
 <div class="content">
+  <% @blogs.each do |blog| %>
   <div class="blog">
-    <h2>Большая разница</h2>
-    <div class="visual">
+    <h2><%= blog.title %></h2>
+    <!--div class="visual">
       <img src="/assets/image01.gif" width="406" height="289" alt="image description" />
-    </div>
-    <p>Круче вышитых гладью букв, могут быть только буквы которые можно съесть. Вот пара удачных примеров съедобной типографии: 1. Anna Garforth и ее постер из печенья. Не знаю как она это сделала, хотя на сайте есть убедительная</p>
-    <a href="#" class="more">читать дальше</a>
-  </div>
-  <div class="blog">
-    <h2>Orangelabel</h2>
-    <div class="visual">
-      <img src="/assets/image01.gif" width="406" height="289" alt="image description" />
-    </div>
-    <p>И постер дня, который мне иногда на лбу хочется носить. Хотя иногда, напротив, носителя такого хочется убитъ. Трудно быть шизофреником. Постер, в любом случае, хорош. (никакого нытья, никаких жалоб и абсолютно никаких хмурых рож.</p>
-    <a href="#" class="more">читать дальше</a>
-  </div>
-  <div class="blog">
-    <h2>Заверните все</h2>
-    <div class="visual">
-      <img src="/assets/image01.gif" width="406" height="289" alt="image description" />
-    </div>
-    <p>Не исключено, что название школы здесь играет не последнюю роль, идея не нова и все такое, но зато какая-то редкая гармония между как и что. Если бы это была обложка книги, можно было бы легко предположить и почти прочувствовать о чем она.</p>
-    <a href="#" class="more">читать дальше</a>
-  </div>
+    </div-->
+    <p><%= blog.cut %></p>
+    <%= link_to 'Читать дальше', 'blog_inside/' + blog.id.to_s, :class=>"more" %>
+  <% end %>
 </div>

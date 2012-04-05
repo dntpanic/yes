@@ -27,42 +27,14 @@
   <div class="bottom-box">
     <h2>Случайные работы:</h2>
     <ul class="items-list">
+      <% @projects.each do |prj| %>
       <li>
-      <a href="#">
-        <img src="/assets/img16.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
+      <a href="/inside_project/<%= prj.id %>/">
+          <%= image_tag(prj.thumbnail, :size => "101x101") %>
+          <span class="mask"></span>
+        </a>
       </li>
-      <li>
-      <a href="#">
-        <img src="/assets/img17.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
-      </li>
-      <li>
-      <a href="#">
-        <img src="/assets/img18.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
-      </li>
-      <li>
-      <a href="#">
-        <img src="/assets/img19.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
-      </li>
-      <li>
-      <a href="#">
-        <img src="/assets/img20.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
-      </li>
-      <li>
-      <a href="#">
-        <img src="/assets/img21.jpg" width="101" height="101" alt="image description" />
-        <span class="mask"></span>
-      </a>
-      </li>
+      <% end %>
     </ul>
   </div>
 </div>
