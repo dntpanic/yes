@@ -3,6 +3,9 @@ ActiveAdmin.register Person do
 
   index do
     column "Name", :name
+    column "Twitter", :twitter_url
+    column "Facebook", :facebook_url
+    column "Name", :name
     column "Avatar", :width => 200 do |person|
       image_tag(person.avatar.url(:small))
     end
@@ -22,6 +25,8 @@ ActiveAdmin.register Person do
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs "Details" do
       f.input :name
+      f.input :twitter_url
+      f.input :facebook_url
       f.input :about
       f.input :avatar, :hint => f.template.image_tag(f.object.avatar.url(:small))
     end
