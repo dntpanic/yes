@@ -1,5 +1,6 @@
 YesDontpanicComUa::Application.routes.draw do
   ActiveAdmin.routes(self)
+  mount ImperaviRails::Engine => "/imperavi"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
