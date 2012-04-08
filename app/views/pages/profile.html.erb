@@ -6,12 +6,16 @@
         <span class="mask"></span>
       </div>
       <ul class="socials">
-        <li>
-        <a href="#"><img src="/assets/facebook.gif" width="19" height="19" alt="facebook" /></a>
-        </li>
-        <li>
-        <a href="#"><img src="/assets/twitter2.gif" width="19" height="19" alt="twitter" /></a>
-        </li>
+        <% if @person.facebook_url %>
+          <li>
+            <a href="<%= @person.facebook_url %>"><img src="/assets/facebook.gif" width="19" height="19" alt="facebook" /></a>
+          </li>
+        <% end %>
+        <% if @person.twitter_url %>
+          <li>
+            <a href="<%= @person.twitter_url %>"><img src="/assets/twitter2.gif" width="19" height="19" alt="twitter" /></a>
+          </li>
+        <% end %>
       </ul>
     </div>
     <div class="text">
