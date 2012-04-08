@@ -20,11 +20,12 @@ ActiveAdmin.register Person do
 
     default_actions :name=> "Actions"
   end
+
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs "Details" do
       f.input :name
-      f.input :about
-      f.input :avatar, :hint => f.template.image_tag(f.object.avatar.url(:small))
+      #f.input :about
+      #f.input :avatar, :hint => f.template.image_tag(f.object.avatar.url(:small))
     end
     f.buttons
   end 
