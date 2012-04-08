@@ -6,8 +6,8 @@
   <%= f.inputs do %>
     <%= f.input :name %>
     <%= f.input :about %>
-    <%= f.input :twitter_url %>
-    <%= f.input :facebook_url %>
+    <%#= f.input :twitter_url %>
+    <%#= f.input :facebook_url %>
     <%= f.input :avatar, :hint => f.template.image_tag(f.object.avatar.url(:small)) %>
   <% end %>
   <%= f.buttons %>
