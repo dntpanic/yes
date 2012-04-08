@@ -8,6 +8,7 @@ gem 'rails', '3.2.0'
 gem 'unicorn'
 gem 'mysql2'
 
+gem 'imperavi-rails', '0.0.12.beta'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 
