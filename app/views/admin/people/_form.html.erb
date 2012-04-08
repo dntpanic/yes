@@ -1,14 +1,1 @@
-<%#= include_imperavi_stylesheet %>
-<%#= include_imperavi_javascript %>
-<%#= imperavi :person_about %>
-
-<%= semantic_form_for [:admin, @person] do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :name %>
-    <%= f.input :about %>
-    <%#= f.input :twitter_url %>
-    <%#= f.input :facebook_url %>
-    <%= f.input :avatar, :hint => f.template.image_tag(f.object.avatar.url(:small)) %>
-  <% end %>
-  <%= f.buttons %>
-<% end %>
+<h1> Hi!!</h1>
