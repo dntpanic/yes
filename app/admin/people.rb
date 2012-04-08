@@ -5,7 +5,6 @@ ActiveAdmin.register Person do
     column "Name", :name
     #column "Twitter", :twitter_url
     #column "Facebook", :facebook_url
-    column "Name", :name
     column "Avatar", :width => 200 do |person|
       image_tag(person.avatar.url(:small))
     end
