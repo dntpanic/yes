@@ -32,7 +32,7 @@ YesDontpanicComUa::Application.routes.draw do
   match 'blog_inside/:id' => 'pages#blog_inside'
   match 'contact_us' => 'pages#contact_us'
   match 'inside_project/:id' => 'pages#inside_project'
-  match 'people' => 'pages#people'
+  #match 'people' => 'pages#people'
   match 'profile/:id' => 'pages#profile'
   
   # Sample resource route with options:
