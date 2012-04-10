@@ -6,5 +6,6 @@ class CreateContents < ActiveRecord::Migration
 
       t.timestamps
     end
+      add_index :contents, :identifier
   end
 end
