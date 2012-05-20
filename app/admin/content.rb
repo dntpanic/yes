@@ -1,4 +1,5 @@
-ActiveAdmin.register Content do
+ActiveAdmin.register Content  do
+  menu :label => 'Static Content', :priority => 100
   # standard 
   #actions :all, :except => [:show]
   

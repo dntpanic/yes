@@ -7,4 +7,5 @@ class BlogPost < ActiveRecord::Base
   def self.next(id)
     return BlogPost.where('blog_posts.id > ?', id).first
   end
+  default_scope order 'created_at desc'
 end

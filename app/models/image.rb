@@ -14,5 +14,5 @@ class Image < ActiveRecord::Base
   validates_property :width,     :of => :image, :in => (50..3000)
   validates_property :height,    :of => :image, :in => (50..3000)
 
-  default_scope order(:updated_at)
+  default_scope order 'updated_at desc'
 end

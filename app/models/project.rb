@@ -12,5 +12,6 @@ class Project < ActiveRecord::Base
   end
 
   belongs_to :person
+  default_scope order 'created_at desc'
 end
 

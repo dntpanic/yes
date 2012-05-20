@@ -14,6 +14,42 @@ ActiveAdmin::Dashboards.build do
   #       end
   #     end
   #   end
+  section "Blogs" do
+    ul do
+      BlogPost.limit(20).collect do |blog|
+        li do 
+          link_to(blog.title, admin_blog_post_path(blog)+'/edit')
+        end
+      end
+    end
+    div do
+      link_to('Create new Post', admin_blog_post_path() + '/new')
+    end
+  end
+  section "People" do
+    ul do
+      Person.limit(20).collect do |person|
+        li do 
+          link_to(person.name, admin_person_path(person)+'/edit')
+        end
+      end
+    end
+    div do
+      link_to('Create new Person', admin_person_path() + '/new')
+    end
+  end
+  section "Projects" do
+    ul do
+      Project.limit(20).collect do |project|
+        li do 
+          link_to(project.title, admin_project_path(project)+'/edit')
+        end
+      end
+    end
+    div do
+      link_to('Create new Project', admin_project_path() + '/new')
+    end
+  end
   
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can

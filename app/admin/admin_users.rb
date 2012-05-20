@@ -1,4 +1,8 @@
 ActiveAdmin.register AdminUser do
+  menu :priority => 500
+  actions :all, :except => [:show]
+  filter :email
+
   index do
     column :email
     column :current_sign_in_at
