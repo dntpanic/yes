@@ -2,6 +2,8 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 
+@import "imperavi-rails/imperavi/imperavi-base";
+
 // To customize the Active Admin interfaces, add your
 // styles here:
 
@@ -15,3 +17,7 @@
 .imp_redactor_frame {
   margin: 15px;
 }
+
+
+
+

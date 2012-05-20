@@ -5,6 +5,7 @@ module ActiveAdmin::ViewHelpers
   def wysiwyg(target)
     imperavi target,
       :paths => {
+        :stylesheets => ['/assets/imperavi-rails/imperavi/wym.css'],
         :images => {
         # Path to upload handler
         :upload => images_path,

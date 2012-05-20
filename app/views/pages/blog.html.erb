@@ -15,7 +15,7 @@
     <!--div class="visual">
       <img src="/assets/image01.gif" width="406" height="289" alt="image description" />
     </div-->
-    <p><%= blog.cut %></p>
+    <p><%=raw blog.cut %></p>
     <%= link_to 'Читать дальше', 'blog_inside/' + blog.id.to_s, :class=>"more" %>
   </div>
   <% end %>

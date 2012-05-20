@@ -14,7 +14,7 @@ class ImagesController < ApplicationController
     @image = Image.new(params[:image])
 
     if @image.save
-      render :text => view_context.image_tag(resize_image(@image, 300, 250).url, :alt => '')
+      render :text => view_context.image_tag(@image.image.url, :alt => '')
     else
       render :json => @image.errors
     end
@@ -28,7 +28,7 @@ class ImagesController < ApplicationController
     images.each do |image|
       json_images << {
         :thumb => resize_image(image, 120, 100).url,
-        :image => resize_image(image, 300, 250).url
+        :image => image.image.url
       }
     end
 
