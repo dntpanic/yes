@@ -12,6 +12,10 @@ gem 'imperavi-rails', '0.0.12.beta'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 
+gem 'dragonfly'
+gem 'dragonfly-minimagick'
+gem 'rack-cache'
+
 gem 'paperclip', "~> 2.0"
 
 # Gems used only for assets and not required

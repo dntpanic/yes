@@ -10,7 +10,7 @@ ActiveAdmin.register Person do
     end
 
     column "About" do |person|
-      person.about.truncate 500
+      strip_tags(person.about).truncate 500
     end
 
     column "Projects" do |person|

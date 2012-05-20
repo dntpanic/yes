@@ -2,7 +2,16 @@
 <%= semantic_form_for [:admin, @person] do |f| %>
   <%= f.inputs do %>
     <%= f.input :name %>
-    <%= imperavi :person_about %>
+    <%= imperavi :person_about,
+        :paths => {
+          :images => {
+            # Path to upload handler
+            :upload => images_path,
+            # Path to list of images
+            :list   => images_path(:format => :json)
+          }
+        }
+    %>
     <%= f.input :about %>
     <%= f.input :twitter_url %>
     <%= f.input :facebook_url %>
