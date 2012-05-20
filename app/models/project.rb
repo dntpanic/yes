@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
     :url  => "/assets/projects/:id/:style/:basename.:extension",
     :path => ":rails_root/public/assets/projects/:id/:style/:basename.:extension"
 
+  validates_presence_of :title,:person, :content
   validates_attachment_presence :thumbnail
   
   def self.works(person_id, project_id)
