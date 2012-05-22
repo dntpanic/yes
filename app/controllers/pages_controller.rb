@@ -1,3 +1,4 @@
+#encoding: utf-8
 class PagesController < ApplicationController
   def index
     @index_header = Content.get_content('index_header')
@@ -34,5 +35,20 @@ class PagesController < ApplicationController
     @person = Person.find(params[:id])
     @works = Project.works(@person.id, 0).shuffle[0..4]
     @people = Person.all.shuffle[0..6]
+  end
+  def send_email
+    first_name = params[:first_name]
+    last_name = params[:last_name]
+    message = params[:body]
+    mail = Mail.new do
+      from     'yes@mail.com'
+      to       'climbonn@gmail.com'
+      subject  'Сообщение от ' + first_name + '  ' + last_name
+      body     message
+    end
+    mail.delivery_method :sendmail
+    mail.deliver
+    flash[:notice] = "Сообщение отправлено. Спасибо!"
+    redirect_to :back
   end
 end

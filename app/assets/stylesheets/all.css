@@ -662,3 +662,8 @@ form,fieldset{
 }
 .profile .text li a{ color:#2e3192;}
 #profile .content p{ margin:0 0 20px;}
+
+div.notice {
+  color: #172;
+  padding: 20px;
+}

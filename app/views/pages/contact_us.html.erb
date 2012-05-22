@@ -12,24 +12,27 @@
     <p>+38/050 920 84 36 <a href="mailto:&#120;&#105;&#110;&#102;&#111;&#064;&#120;&#100;&#099;&#046;&#099;&#111;&#109;&#046;&#117;&#097;">&#120;&#105;&#110;&#102;&#111;&#064;&#120;&#100;&#099;&#046;&#099;&#111;&#109;&#046;&#117;&#097;</a></p>
   </div>
 </div>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <div class="content">
-  <form action="#" class="contact-form">
-    <fieldset>
-      <h2>Раскажите о себе:</h2>
-      <div class="row">
-        <label for="txt1">Имя:</label>
-        <input type="text" id="txt1" class="text" />
-      </div>
-      <div class="row">
-        <label for="txt2">Фамилия:</label>
-        <input type="text" id="txt2" class="text" />
-      </div>
-      <h2>Немного слов:</h2>
-      <textarea cols="10" rows="10" class="area"></textarea>
-      <input type="submit" value="Отправить" class="submit" />
-    </fieldset>
-  </form>
-  <div class="text-box">
+    <%= form_tag '/send_email', :class => 'contact-form' do %>
+      <fieldset>
+        <h2>Раскажите о себе:</h2>
+        <div class="row">
+          <%= label_tag :first_name, 'Имя:'  %>
+          <%= text_field_tag :first_name, nil, :required => true %>
+        </div>
+        <div class="row">
+          <%= label_tag :last_name, 'Фамилия:' %>
+          <%= text_field_tag :last_name, nil, :required => true %>
+        </div>
+        <h2>Немного слов:</h2>
+        <%= text_area_tag :body, nil, :rows => 10, :cols =>10, :class => 'area', :required => true %>
+        <%= submit_tag "Отправить", :class => 'submit' %>
+      </fieldset>
+    <% end %>
+    <div class="text-box">
     <p><%= @contact_content %></p>
   </div>
 </div>
