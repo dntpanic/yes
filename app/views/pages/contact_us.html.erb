@@ -16,7 +16,7 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 <div class="content">
-    <%= form_tag '/send_email', :class => 'contact-form' do %>
+    <%= form_tag send_email_path, :class => 'contact-form' do %>
       <fieldset>
         <h2>Раскажите о себе:</h2>
         <div class="row">

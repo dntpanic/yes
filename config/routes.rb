@@ -16,6 +16,7 @@ YesDontpanicComUa::Application.routes.draw do
   get "pages/people"
   get "pages/profile"
   post "pages/send_email"
+  post "pages/semd_email", :to => "pages#send_email", :as => "send_email"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -35,7 +36,6 @@ YesDontpanicComUa::Application.routes.draw do
   match 'inside_project/:id' => 'pages#inside_project'
   match 'people' => 'pages#people'
   match 'profile/:id' => 'pages#profile'
-  match 'send_email' => 'pages#send_email'
   
   # Sample resource route with options:
   #   resources :products do

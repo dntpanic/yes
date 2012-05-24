@@ -37,6 +37,7 @@ class PagesController < ApplicationController
     @people = Person.all.shuffle[0..6]
   end
   def send_email
+    require "mail"
     first_name = params[:first_name]
     last_name = params[:last_name]
     message = params[:body]
