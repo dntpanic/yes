@@ -13,39 +13,39 @@
   <h1 class="title-move">Двигаем Х</h1>
   <div class="slider-wrapper">
     <ul class="slider">
+      <% @last[0].sort_by(&:created_at).each do |item| %>
       <li>
-      <div class="box">
-        <a href="#">
-          <span class="image">
-            <img src="/assets/img01.png" alt="description" width="127" height="127" />
-            <span class="mask"></span>
-          </span>
-          <strong class="title">Из блога №1</strong>
-          Опорно-двигательная система рыб — система органов и тканей рыб, которая позволяет им осуществлять движения и корректировать свое положение в окружающей среде.
-        </a>	
-      </div>
-      <div class="box">
-        <a href="#">
-          <span class="image">
-            <img src="/assets/img02.png" alt="description" width="127" height="127" />
-            <span class="mask"></span>
-          </span>
-          <strong class="title">Из блога №2</strong>
-          Опорно-двигательная система рыб — система органов и тканей рыб, которая позволяет им осуществлять движения и корректировать свое положение в окружающей среде.
-        </a>	
-      </div>
-      <div class="box">
-        <a href="#">
-          <span class="image">
-            <img src="/assets/img03.png" alt="description" width="127" height="127" />
-            <span class="mask"></span>
-          </span>
-          <strong class="title">Из блога №3</strong>
-          Опорно-двигательная система рыб — система органов и тканей рыб, которая позволяет им осуществлять движения и корректировать свое положение в окружающей среде.
-        </a>
-      </div>
+        <div class="box">
+          <a href="<%= (item.has_attribute?(:cut) ? "blog_inside/" : "inside_project/") + item.id.to_s %>">
+            <span class="image">
+              <% if (item.has_attribute?(:thumbnail_file_name)) %>
+                <%= image_tag(item.thumbnail, :size => "127x127") %>
+                <span class="mask"></span>
+              <% else %>
+                <img src="/assets/img04.gif" alt="description" width="127" height="127" />
+                <span class="mask"></span>
+              <% end %>
+            </span>
+            <strong class="title">Из "<%= item.title %>"</strong>
+            <% if (item.has_attribute?(:cut)) %>
+              <%= truncate(item.cut, :length => 100) %>
+            <% else %>
+              <%= truncate(item.content, :length => 100) %>
+            <% end %>
+          </a>
+        </div>
       </li>
+      <% end %>
     </ul>
-    <a class="btn-next">next</a>
   </div>
+  <a class="btn-next">next</a>
 </div>
+<script type="text/javascript">
+  jQuery(".slider-wrapper").jCarouselLite({
+    btnNext: ".btn-next",
+    btnPrev: ".btn-prev",
+    circular: true,
+    scroll: 3,
+    speed: 400
+  });
+</script>

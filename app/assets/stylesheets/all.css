@@ -167,6 +167,7 @@ p .img_right {
 }
 #index .content{
   font: 13px/15px 'Trebuchet MS', Verdana, Arial,sans-serif;
+  position: relative;
 }
 #index .slider-wrapper{
   overflow: hidden;
@@ -181,7 +182,7 @@ p .img_right {
   overflow: hidden;
 }
 #index .slider li {
-  width:874px;
+  /*width:874px;*/
   float:left;
 }
 #index .box a{
@@ -227,8 +228,9 @@ p .img_right {
   width:36px;
   position:absolute;
   right:0;
-  top: 100px;
+  top: 186px;
   cursor:pointer;
+  z-index:5;
 }
 /* contact page */
 #contact_us .top-panel,
@@ -430,8 +432,8 @@ p .img_right {
 .items-list a{
   display:block;
   position:relative;
-  width:98px;
-  height:97px;
+  width:101px;
+  height:101px;
   overflow:hidden;
 }
 #blog_inside .items-list .mask{
@@ -495,11 +497,11 @@ p .img_right {
   color:#3d3d3d;
 }
 .author .photo{
-  width:70px;
+  width:71px;
   overflow:hidden;
   position:relative;
   margin:0 0 9px;
-  height:70px;
+  height:71px;
 }
 .author .photo .mask{
   background: url('bg-mask3.png') no-repeat;
@@ -518,6 +520,9 @@ p .img_right {
 #inside_project .aside .items-list .mask,
 .bottom-box .items-list .mask{
   background: url('bg-mask4.png') no-repeat;
+}
+#inside_project .aside .items-list .mask {
+  left: -1px;
 }
 /* people page */
 #people .top-panel{

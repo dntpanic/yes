@@ -2,6 +2,7 @@
 class PagesController < ApplicationController
   def index
     @index_header = Content.get_content('index_header')
+    @last = [Project.order("created_at").limit(100).all + BlogPost.order("created_at").limit(100).all]
   end
   def about
     @about_header = Content.get_content('about_header')
@@ -42,8 +43,8 @@ class PagesController < ApplicationController
     last_name = params[:last_name]
     message = params[:body]
     mail = Mail.new do
-      from     'yes@mail.com'
-      to       'climbonn@gmail.com'
+      from     'yes_contact@mail.com'
+      to       'whoisjoy@gmail.com'
       subject  'Сообщение от ' + first_name + '  ' + last_name
       body     message
     end
