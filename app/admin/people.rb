@@ -6,8 +6,6 @@ ActiveAdmin.register Person do
 
   index do
     column "Name", :name
-    #column "Twitter", :twitter_url
-    #column "Facebook", :facebook_url
     column "Avatar", :width => 200 do |person|
       image_tag(person.avatar.url(:small))
     end
@@ -29,9 +27,11 @@ ActiveAdmin.register Person do
       f.input :name
       f.input :about, :hint => f.template.wysiwyg(:person_about)
       f.input :twitter_url,
-          :input_html => { :size => 64,:style => "width:auto;" }
+          :input_html => { :size => 64,:style => "width:auto;" },
+          :as => :url
       f.input :facebook_url,
-          :input_html => { :size => 64,:style => "width:auto;" }
+          :input_html => { :size => 64,:style => "width:auto;" },
+          :as => :url
       f.input :avatar, :hint => f.template.image_tag(f.object.avatar.url(:small))
     end
     f.buttons

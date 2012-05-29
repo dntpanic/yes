@@ -28,9 +28,9 @@
             </span>
             <strong class="title">Из "<%= item.title %>"</strong>
             <% if (item.has_attribute?(:cut)) %>
-              <%= truncate(item.cut, :length => 100) %>
+              <%= strip_tags(item.cut).truncate(200, :separator => '  ') %>
             <% else %>
-              <%= truncate(item.content, :length => 100) %>
+              <%= strip_tags(item.content).truncate(200, :separator => '  ') %>
             <% end %>
           </a>
         </div>
@@ -38,7 +38,9 @@
       <% end %>
     </ul>
   </div>
-  <a class="btn-next">next</a>
+  <% if @last[0].size > 3 %>
+    <a class="btn-next">next</a>
+  <% end %>
 </div>
 <script type="text/javascript">
   jQuery(".slider-wrapper").jCarouselLite({
@@ -46,6 +48,6 @@
     btnPrev: ".btn-prev",
     circular: true,
     scroll: 3,
-    speed: 400
+    speed: 1500
   });
 </script>

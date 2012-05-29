@@ -6,12 +6,12 @@
         <span class="mask"></span>
       </div>
       <ul class="socials">
-        <% if @person.facebook_url %>
+        <% if !@person.facebook_url.empty? %>
           <li>
             <a href="<%= @person.facebook_url %>"><img src="/assets/facebook.gif" width="19" height="19" alt="facebook" /></a>
           </li>
         <% end %>
-        <% if @person.twitter_url %>
+        <% if !@person.twitter_url.empty? %>
           <li>
             <a href="<%= @person.twitter_url %>"><img src="/assets/twitter2.gif" width="19" height="19" alt="twitter" /></a>
           </li>
