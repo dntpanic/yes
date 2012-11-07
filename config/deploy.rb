@@ -51,6 +51,7 @@ set :keep_releases, 4
 #   end
 # end
 after 'deploy:update_code', 'deploy:symlink_db'
+before 'deploy:assets:precompile', 'deploy:symlink_db'
 
 namespace :deploy do
   desc "Symlinks the database.yml"
