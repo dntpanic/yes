@@ -198,6 +198,7 @@ DEPENDENCIES
   dragonfly-minimagick
   execjs
   imperavi-rails (= 0.0.12.beta)
+  jquery-rails
   meta_search (>= 1.1.0.pre)
   mysql2
   paperclip (~> 2.0)
