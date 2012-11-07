@@ -25,7 +25,7 @@ set :deploy_to, "/www/#{application}"
 
 namespace :deploy do
   task :restart, :roles => :web, :except => { :no_release => true } do
-    run "/etc/init.d/unicorn_init upgrade"
+    run "/etc/unicorn/yes.dontpanic.com.ua.sh upgrade"
   end
 end
 

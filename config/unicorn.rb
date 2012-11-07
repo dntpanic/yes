@@ -22,7 +22,8 @@ listen "/tmp/yes.dontpanic.com.ua.unicorn.socket", :backlog => 2048
 # feel free to point this anywhere accessible on the filesystem
 user 'www-data'
 
-pid "/tmp/yes.dontpanic.com.ua.unicorn.pid"
+#pid "/tmp/yes.dontpanic.com.ua.unicorn.pid"
+pid "#{app_dir}/tmp/pids/unicorn.pid"
 stderr_path "#{app_dir}/log/unicorn.stderr.log"
 stdout_path "#{app_dir}/log/unicorn.stdout.log"
 
