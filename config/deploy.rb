@@ -65,3 +65,12 @@ namespace :deploy do
     run "ln -nfs #{deploy_to}/shared/config/production.rb #{release_path}/config/environments/production.rb"
   end
 end
+namespace :log do
+  desc "A pinch of tail"
+  task :tailf, :roles => :app do
+    run "tail -n 10000 -f #{shared_path}/log/#{rails_env}.log" do |channel, stream, data|
+      puts "#{data}"
+      break if stream == :err
+    end
+  end
+end
