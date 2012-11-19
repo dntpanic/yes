@@ -24,6 +24,12 @@ ssh_options[:forward_agent] = true
 set :deploy_to, "/www/#{application}"
 
 namespace :deploy do
+  %w[start stop].each do |command|
+    desc "#{command} unicorn server"
+    task command, :roles => :app, :except => { :no_release => true } do
+      run "/etc/unicorn/yes.dontpanic.com.ua.sh #{command}"
+    end
+  end
   task :restart, :roles => :web, :except => { :no_release => true } do
     run "/etc/unicorn/yes.dontpanic.com.ua.sh upgrade"
   end
