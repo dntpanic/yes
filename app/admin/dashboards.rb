@@ -1,80 +1,52 @@
-ActiveAdmin::Dashboards.build do
+ActiveAdmin.register_page "Dashboard" do
 
-  # Define your dashboard sections here. Each block will be
-  # rendered on the dashboard in the context of the view. So just
-  # return the content which you would like to display.
-  
-  # == Simple Dashboard Section
-  # Here is an example of a simple dashboard section
-  #
-  #   section "Recent Posts" do
-  #     ul do
-  #       Post.recent(5).collect do |post|
-  #         li link_to(post.title, admin_post_path(post))
-  #       end
-  #     end
-  #   end
-  section "Blogs" do
-    ul do
-      BlogPost.limit(20).collect do |blog|
-        li do 
-          link_to(blog.title, admin_blog_post_path(blog)+'/edit')
-        end
-      end
-    end
-    div do
-      link_to('Create new Post', admin_blog_post_path() + '/new')
-    end
-  end
-  section "People" do
-    ul do
-      Person.limit(20).collect do |person|
-        li do 
-          link_to(person.name, admin_person_path(person)+'/edit')
-        end
-      end
-    end
-    div do
-      link_to('Create new Person', admin_person_path() + '/new')
-    end
-  end
-  section "Projects" do
-    ul do
-      Project.limit(20).collect do |project|
-        li do 
-          link_to(project.title, admin_project_path(project)+'/edit')
-        end
-      end
-    end
-    div do
-      link_to('Create new Project', admin_project_path() + '/new')
-    end
-  end
-  
-  # == Render Partial Section
-  # The block is rendered within the context of the view, so you can
-  # easily render a partial rather than build content in ruby.
-  #
-  #   section "Recent Posts" do
-  #     div do
-  #       render 'recent_posts' # => this will render /app/views/admin/dashboard/_recent_posts.html.erb
-  #     end
-  #   end
-  
-  # == Section Ordering
-  # The dashboard sections are ordered by a given priority from top left to
-  # bottom right. The default priority is 10. By giving a section numerically lower
-  # priority it will be sorted higher. For example:
-  #
-  #   section "Recent Posts", :priority => 10
-  #   section "Recent User", :priority => 1
-  #
-  # Will render the "Recent Users" then the "Recent Posts" sections on the dashboard.
-  
-  # == Conditionally Display
-  # Provide a method name or Proc object to conditionally render a section at run time.
-  #
-  # section "Membership Summary", :if => :memberships_enabled?
-  # section "Membership Summary", :if => Proc.new { current_admin_user.account.memberships.any? }
+  menu :priority => 1, :label => proc{ I18n.t("active_admin.dashboard") }
 
+  content :title => proc{ I18n.t("active_admin.dashboard") } do
+    columns do
+      column do
+        panel "Recent Blogs" do
+          ul do
+            BlogPost.limit(20).collect do |blog|
+              li do 
+                link_to(blog.title, edit_admin_blog_post_path(blog))
+              end
+            end
+          end
+          div do
+            link_to('Create new Post', new_admin_blog_post_path())
+          end
+        end
+      end
+      column do
+        panel "People" do
+          ul do
+            Person.limit(20).collect do |person|
+              li do 
+                link_to(person.name, edit_admin_person_path(person))
+              end
+            end
+          end
+          div do
+            link_to('Create new Person', new_admin_person_path())
+          end
+        end
+      end
+      column do
+        panel "Projects" do
+          ul do
+            Project.limit(20).collect do |project|
+              li do 
+                link_to(project.title, edit_admin_project_path(project))
+              end
+            end
+          end
+          div do
+            link_to('Create new Project', new_admin_project_path())
+          end
+        end
+      end
+    end
+
+  end # content
 end
