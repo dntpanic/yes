@@ -22,8 +22,12 @@
       <h1><%= @person.name %></h1>
       <%=raw  @person.about %>
       <div class="likeit">
-        <div class="facebook"><img src="/assets/fb.gif" alt="fb" width="177" height="24" /></div>
-        <div class="twitter"><img src="/assets/twitter.gif" alt="twitter" width="98" height="22" /></div>
+        <div class="facebook">
+          <div class="fb-like" data-send="false" data-width="400" data-show-faces="false"></div>
+        </div>
+        <div class="twitter">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-text="This page is so cool:" data-hashtags="betterthanworse">Tweet</a>
+        </div>
       </div>
     </div>
   </div>
